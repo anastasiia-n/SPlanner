@@ -1,0 +1,177 @@
+﻿<Page
+    x:Class="SPlanner_UWP.Calendar_Week"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    xmlns:vm="using:SPlanner_UWP.ViewModel"
+    xmlns:bl="using:SPlanner.BL"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:DateWeekHeaderConverter x:Key="dateHeaderConverter"/>
+        <converters:NoopConverter x:Key="noopConverter"/>
+        <converters:ClassToColorConverter x:Key="classToColorConverter"/>
+        <converters:WeekViewClassesHeightConverter x:Key="heightConverter"/>
+        <converters:WeekViewClassesPositionConverter x:Key="positionConverter"/>
+        <converters:MonthDayItemBackgroundConverter x:Key="backgroundConverter"/>
+        <Style x:Key="GridViewItemStyle1" TargetType="GridViewItem">
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="IsHoldingEnabled" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="MinWidth" Value="{ThemeResource GridViewItemMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource GridViewItemMinHeight}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GridViewItem">
+                        <ListViewItemPresenter CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
+                                               ContentMargin="{TemplateBinding Padding}" CheckMode="Overlay" 
+                                               ContentTransitions="{TemplateBinding ContentTransitions}" 
+                                               CheckBoxBrush="{ThemeResource SystemControlBackgroundChromeMediumBrush}" 
+                                               DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" 
+                                               DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
+                                               DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" 
+                                               DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" 
+                                               SelectionCheckMarkVisualEnabled="True"
+                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Name="mainCalendarWeekGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Disabled" 
+                      Grid.Row="1" Grid.ColumnSpan="3" >
+            <Grid Name="calendarGrid" Background="Transparent"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <GridView Name ="DatesGridView" Grid.Column="1" SelectionMode="Single" IsItemClickEnabled="True" ItemClick="CalendarGridView_ItemClick" 
+                  SelectedItem="{x:Bind WeekVM.SelectedDay, Mode=TwoWay, Converter={StaticResource noopConverter}}"
+                   ItemsSource="{x:Bind WeekVM.Day_Week_InfoCollection, Mode=OneWay}" Margin="50,0,0,0" MinWidth="1050">
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="vm:Day_Info">
+                            <Border Width="150" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="1,0"
+                                    Background="{x:Bind date, Converter={StaticResource backgroundConverter}}">
+                                <TextBlock Text="{x:Bind date.Day}" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid MaximumRowsOrColumns="7" Orientation="Horizontal" HorizontalAlignment="Stretch"
+                              HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Top" VerticalAlignment="Top"/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ItemsControl Name ="CalendarItemsControl" ItemsSource="{x:Bind WeekVM.Day_Week_InfoCollection, Mode=OneWay}" 
+                                      Grid.Column="1" Margin="0,-30,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="vm:Day_Info">
+                                    <Grid Width="150" VerticalAlignment="Top" >
+                                        <ItemsControl ItemsSource="{x:Bind timeLimit}" Grid.Row="1" >
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Vertical"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border BorderBrush="LightGray" Height="60"
+                                                    BorderThickness="0,0,0,1"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <GridView ItemsSource="{x:Bind Classes}" Grid.Row="1" 
+                                                  ItemContainerStyle="{StaticResource GridViewItemStyle1}"
+                                                  SelectionMode="Single" >
+                                            <GridView.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Vertical" />
+                                                </ItemsPanelTemplate>
+                                            </GridView.ItemsPanel>
+                                            <GridView.ItemTemplate>
+                                                <DataTemplate x:DataType="bl:Class">
+                                                    <Border Background="{x:Bind id, Converter={StaticResource classToColorConverter}}" 
+                                                            Height="{x:Bind duration, Converter={StaticResource heightConverter}}"
+                                                            Margin="{Binding Mode=OneWay, Converter={StaticResource positionConverter}}" Padding="5">
+                                                        <StackPanel Orientation="Vertical" >
+                                                            <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <TextBlock Text="("/>
+                                                                <TextBlock Text="{x:Bind subject.Name}"/>
+                                                                <TextBlock Text=")"/>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </GridView.ItemTemplate>
+                                        </GridView>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapGrid MaximumRowsOrColumns="7" Orientation="Horizontal" 
+                                  HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Top" VerticalAlignment="Top"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                        <ItemsControl Name="TimeItemsControl" ItemsSource="{x:Bind WeekVM.timeLimit}" Margin="0,-30,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="LightGray" Height="60">
+                                        <TextBlock Text="{Binding}" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical" Margin="0,-30,0,0"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </ScrollViewer>
+        
+        <Button HorizontalAlignment="Center" FontFamily="Segoe MDL2 Assets" 
+                Content="&#xE0A6;" FontSize="36" Click="Button_Prev_Click" Background="{ThemeResource AppBarBackgroundThemeBrush}"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" 
+                   Text="{x:Bind WeekVM.SelectedDate, Mode=OneWay, Converter={StaticResource dateHeaderConverter}}"
+                   Foreground="{ThemeResource SystemControlForegroundAccentBrush}" />
+        <Button HorizontalAlignment="Center" Grid.Column="2" FontFamily="Segoe MDL2 Assets" 
+                Content="&#xE0AB;" FontSize="36" Click="Button_Next_Click" Background="{ThemeResource AppBarBackgroundThemeBrush}"/>
+        <Frame Grid.Row="1" Grid.Column="3" Name="DayFrame" Padding="5,0,0,0">
+        </Frame>
+    </Grid>
+</Page>

@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="SPlanner_UWP.ProfessorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:converters="using:SPlanner_UWP.Converters"
+    xmlns:bl="using:SPlanner.BL"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:SimpleDateConverter x:Key="simpleDateConverter"/>
+        <converters:NullToVisibleConverter x:Key="nullToVisibleConverter"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="HeadersGrid" HorizontalAlignment="Stretch" Padding="20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Name:" Margin="10,0,0,0" Style="{StaticResource HeadersTextBlockStyle}"/>
+            <TextBlock Text="Email:" Grid.Column="1" Style="{StaticResource HeadersTextBlockStyle}"/>
+            <TextBlock Text="Office:" Grid.Column="2" Style="{StaticResource HeadersTextBlockStyle}"/>
+        </Grid>
+        <ListView ItemsSource="{x:Bind ProfessorVM.ProfessorCollection}" Padding="10" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate  x:DataType="bl:Professor">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold" Padding="10" MinWidth="200"/>
+                        <TextBlock Text="{x:Bind Email}" Grid.Column="1" Padding="10" MinWidth="150"/>
+                        <TextBlock Text="-" Grid.Column="1" VerticalAlignment="Center" Padding="10"
+                                   Visibility="{x:Bind Email, Converter={StaticResource nullToVisibleConverter}}"/>
+                        <TextBlock Text="{x:Bind Office}" Grid.Column="2" Padding="10" MinWidth="100"/>
+                        <TextBlock Text="-" Grid.Column="2" VerticalAlignment="Center" Padding="10"
+                                   Visibility="{x:Bind Office, Converter={StaticResource nullToVisibleConverter}}"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="3">
+                            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE104;" HorizontalAlignment="Right" 
+                                Click="EditButton_Click" Style="{StaticResource ButtonStyleIcon}"/>
+                            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE107;" HorizontalAlignment="Right" 
+                                    Click="DeleteButton_Click" Style="{StaticResource ButtonStyleIcon}"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1"
+                Background="{ThemeResource SystemAccentColor}"
+                Margin="15,15,55,55" Width="40" Height="40" CornerRadius="20" >
+            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE109;" FontWeight="SemiBold"
+                    Click="AddButton_Click" Foreground="White" Background="Transparent"
+                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Style="{StaticResource ButtonStyleAddIcon}"/>
+        </Border>
+    </Grid>
+</Page>

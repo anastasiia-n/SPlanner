@@ -1,0 +1,35 @@
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\ShoppingListConsole\DataAbstractionLayerPCL\bin\Debug\sqlite3.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\sqlite3.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+D:\VS\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+D:\VS\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+D:\VS\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.csprojResolveAssemblyReference.cache
+D:\VS\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+D:\VS\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.csprojResolveAssemblyReference.cache
+D:\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+D:\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+D:\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.csprojResolveAssemblyReference.cache
+D:\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+D:\IPB\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.csprojResolveAssemblyReference.cache
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.dll
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\obj\Debug\DataAbstractionLayerPCL.pdb

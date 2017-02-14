@@ -1,0 +1,25 @@
+﻿<ContentDialog x:ConnectionId='1'
+    x:Class="SPlanner_UWP.ProfessorDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="TITLE"
+    PrimaryButtonText="Ok"
+    SecondaryButtonText="Cancel"
+                                                         
+                                                                                             >
+
+    <StackPanel x:ConnectionId='2' Name="Professor" Orientation="Vertical">
+        <TextBox x:ConnectionId='3' Header="Name:"  Name="Professor_name_tb"
+                                                                        />
+        <TextBox x:ConnectionId='4' Header="Email:" Name="Professor_email_tb"
+                                                                         />
+        <TextBox x:ConnectionId='5' Header="Office:" Name="Professor_office_tb"
+                                                                          />
+        <TextBlock x:ConnectionId='6' Name="ErrorTextBlock"  Text="" FontStyle="Italic"/>
+    </StackPanel>
+</ContentDialog>
+

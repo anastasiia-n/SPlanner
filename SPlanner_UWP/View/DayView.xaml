@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="SPlanner_UWP.DayView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bl="using:SPlanner.BL"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:SimpleDateConverter x:Key="simpleDateConverter"/>
+        <converters:SimpleTimeConverter x:Key="simpleTimeConverter"/>
+        <converters:NullToVisibleConverter x:Key="nullToVisibleConverter"/>
+        <converters:BoolToColorConverter x:Key="boolToColorConverter"/>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{x:Bind SelectedDate, Converter={StaticResource simpleDateConverter}}"
+                   Margin="5" FontSize="20" FontWeight="Bold" Foreground="{ThemeResource SystemControlForegroundAccentBrush}"/>
+        <TextBlock Grid.Row="1" Text="Classes:" Margin="0,10,0,0" FontWeight="SemiBold"/>
+        <TextBlock Grid.Row="2" Text="no classes" Margin="10,0,0,0" FontStyle="Italic"
+                   Visibility="{x:Bind ClassVM.ClassCollection.Count, Converter={StaticResource nullToVisibleConverter}}"/>
+        <ListView Grid.Row="2" ItemsSource="{x:Bind ClassVM.ClassCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate  x:DataType="bl:Class">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" Width="auto">
+                            <StackPanel Orientation="Horizontal" Padding="2">
+                                <TextBlock Text="{x:Bind Name}"/>
+                                <TextBlock Text=""><Run Text="("/><Run Text="{x:Bind subject.Name}"/><Run Text=")"/></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Padding="2">
+                                <TextBlock Text="in" FontStyle="Italic" Margin="0,0,5,0" Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"/>
+                                <TextBlock Text="{x:Bind Location}" FontStyle="Italic" Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"/>
+                            </StackPanel>
+                            <TextBlock Text="{x:Bind professor.Name}"
+                                                           FontStyle="Italic" Foreground="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                            <TextBlock Text="{x:Bind Start_time, Converter={StaticResource simpleTimeConverter}}"/>
+                            <TextBlock Text="{x:Bind End_time, Converter={StaticResource simpleTimeConverter}}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Grid.Row="3" Text="Tasks:" Margin="0,10,0,0" FontWeight="SemiBold"/>
+        <TextBlock Grid.Row="4" Text="no tasks" Margin="10,0,0,0" FontStyle="Italic"
+                   Visibility="{x:Bind TasksVM.TasksCollection.Count, Converter={StaticResource nullToVisibleConverter}}"/>
+        <ListView Grid.Row="4" ItemsSource="{x:Bind TasksVM.TasksCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate  x:DataType="bl:Task">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" Width="150">
+                            <TextBlock Text="{x:Bind subject.Name}"
+                                       Foreground="{x:Bind Done, Mode=OneWay,Converter={StaticResource boolToColorConverter}}"/>
+                            <TextBlock Text="{x:Bind Text}" FontStyle="Italic"
+                                       Foreground="{x:Bind Done, Mode=OneWay,Converter={StaticResource boolToColorConverter}}"/>
+                        </StackPanel>
+                        <TextBlock Text="{x:Bind Deadline, Converter={StaticResource simpleDateConverter}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

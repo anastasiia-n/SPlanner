@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="SPlanner_UWP.Calendar_Month"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    xmlns:vm="using:SPlanner_UWP.ViewModel"
+    xmlns:bl="using:SPlanner.BL"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:DateHeaderConverter x:Key="dateHeaderConverter"/>
+        <converters:ButtonNextMonthConverter x:Key="monthNextConverter"/>
+        <converters:ButtonPrevMonthConverter x:Key="monthPrevConverter"/>
+        <converters:NoopConverter x:Key="noopConverter"/>
+        <converters:ClassToColorConverter x:Key="classToColorConverter"/>
+        <converters:NullToCollapsedConverter x:Key="visibilityConverter"/>
+        <converters:MonthDayItemColorConverter x:Key="dayColorConverter"/>
+        <converters:MonthDayItemBackgroundConverter x:Key="dayBackgroundConverter"/>
+    </Page.Resources>
+
+    <Grid Name="mainCalendarGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Disabled"
+                      Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ItemsControl Name ="DaysOfWeekGridView" 
+                              ItemsSource="{x:Bind MonthVM.daysOfWeek}" Height="50">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate >
+                            <Grid MinWidth="100" MinHeight="60" Padding="10">
+                                <TextBlock Text="{Binding}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid MaximumRowsOrColumns="7" Orientation="Horizontal" 
+                              HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Stretch"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto"
+                            Grid.Row="1">
+                    <Grid Name="calendarGrid" Background="Transparent">
+                        <GridView Name ="CalendarGridView" SelectionMode="Single" IsItemClickEnabled="True" 
+                                    ItemClick="CalendarGridView_ItemClick" 
+                                    SelectedItem="{x:Bind MonthVM.SelectedDay, Mode=TwoWay, Converter={StaticResource noopConverter}}"
+                                    ItemsSource="{x:Bind MonthVM.Day_Month_InfoCollection, Mode=OneWay}" MinWidth="750"  >
+                            <GridView.ItemTemplate>
+                                <DataTemplate x:DataType="vm:Day_Info">
+                                    <Grid MinWidth="100" MinHeight="60" Padding="10"
+                                            Background="{x:Bind date, Converter={StaticResource dayBackgroundConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{x:Bind date.Day, Mode=OneWay}" 
+                                                        Foreground="{x:Bind isActualMonth, Converter={StaticResource dayColorConverter}}"
+                                                        HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" 
+                                                        Margin="5,5,0,0" Padding="5,0,10,0" />
+                                            <Border Background="{ThemeResource SystemAccentColor}" CornerRadius="10" Width="20" Height="20" 
+                                                    Padding="2" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                                    Visibility="{x:Bind Tasks.Count, Converter={StaticResource visibilityConverter}}">
+                                                <TextBlock Text="{x:Bind Tasks.Count, Mode=OneWay}" Foreground="White"
+                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </StackPanel>
+                                        <ItemsControl ItemsSource="{x:Bind Classes}" Canvas.ZIndex="-1">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Orientation="Vertical"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="bl:Class">
+                                                    <Rectangle Fill="{x:Bind id, Converter={StaticResource classToColorConverter}}" Width="60" Height="5" Margin="0,2,0,0"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                            <GridView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapGrid MaximumRowsOrColumns="7" Orientation="Horizontal" 
+                            HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Stretch"/>
+                                </ItemsPanelTemplate>
+                            </GridView.ItemsPanel>
+                        </GridView>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </ScrollViewer>
+
+        <Button HorizontalAlignment="Center"
+                Content="{x:Bind MonthVM.SelectedDate, Mode=OneWay, Converter={StaticResource monthPrevConverter}}" 
+                Click="Button_Prev_Click" Background="{ThemeResource AppBarBackgroundThemeBrush}"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" 
+                   Text="{x:Bind MonthVM.SelectedDate, Mode=OneWay, Converter={StaticResource dateHeaderConverter}}"
+                   Foreground="{ThemeResource SystemControlForegroundAccentBrush}" FontWeight="SemiBold"/>
+        <Button HorizontalAlignment="Center" Grid.Column="2" 
+                Content="{x:Bind MonthVM.SelectedDate, Mode=OneWay, Converter={StaticResource monthNextConverter}}" 
+                Click="Button_Next_Click" Background="{ThemeResource AppBarBackgroundThemeBrush}"/>
+        <Frame Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Name="DayFrame">
+        </Frame>
+    </Grid>
+</Page>

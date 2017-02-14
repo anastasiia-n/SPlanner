@@ -1,0 +1,24 @@
+﻿<ContentDialog
+    x:Class="SPlanner_UWP.ProfessorDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="TITLE"
+    PrimaryButtonText="Ok"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Closing="ContentDialog_Closing">
+
+    <StackPanel Name="Professor" Orientation="Vertical">
+        <TextBox Header="Name:"  Name="Professor_name_tb"
+                 Text="{x:Bind ProfessorVM.Professor.Name, Mode=TwoWay}"/>
+        <TextBox Header="Email:" Name="Professor_email_tb"
+                 Text="{x:Bind ProfessorVM.Professor.Email, Mode=TwoWay}"/>
+        <TextBox Header="Office:" Name="Professor_office_tb"
+                 Text="{x:Bind ProfessorVM.Professor.Office, Mode=TwoWay}"/>
+        <TextBlock Name="ErrorTextBlock"  Text="" FontStyle="Italic"/>
+    </StackPanel>
+</ContentDialog>

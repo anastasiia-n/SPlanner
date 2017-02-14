@@ -1,0 +1,122 @@
+﻿<Page
+    x:Class="SPlanner_UWP.HelpView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' FontFamily="Segoe MDL2 Assets" Content="&#xE149;" VerticalAlignment="Top"
+                Background="{ThemeResource SystemAccentColor}" Foreground="White"
+                                           />
+        <RelativePanel HorizontalAlignment="Stretch" Padding="10" >
+            <TextBlock x:ConnectionId='2' Name="Header1TextBlock" FontSize="25" 
+                       Text="So... you are lost and you have no idea" 
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <TextBlock x:ConnectionId='3' Name="Header2TextBlock"
+                       Text="how to use this application, don't you?"
+                       FontSize="20"
+                       RelativePanel.Below="Header1TextBlock"
+                       RelativePanel.AlignHorizontalCenterWith="Header1TextBlock"/>
+            <RelativePanel x:ConnectionId='4' Name="FirstStepPanel" Width="500" Height="200" Visibility="Collapsed"
+                           RelativePanel.Below="Header2TextBlock"
+                           RelativePanel.AlignHorizontalCenterWith="Header2TextBlock">
+                <Button x:ConnectionId='21' Name="FirstClickButton" Content="Yes, I am :(" Margin="10"
+                        Background="{ThemeResource SystemAccentColor}" Foreground="White"
+                                                      
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <TextBlock x:ConnectionId='22' Name="ArrowTextBlock" FontFamily="Segoe MDL2 Assets" 
+                           Text="&#xE143;" Foreground="Gray" 
+                           RelativePanel.LeftOf="FirstClickButton"
+                           RelativePanel.Below="FirstClickButton"/>
+                <TextBlock x:ConnectionId='23' Name="ArrowDescriptionTextBlock" Text="Pss.. just click here" Foreground="Gray"
+                           RelativePanel.LeftOf="FirstClickButton"
+                           RelativePanel.Below="ArrowTextBlock"/>
+            </RelativePanel>
+            <RelativePanel x:ConnectionId='5' Name="SubjectPanel"  Visibility="Collapsed">
+                <TextBlock x:ConnectionId='17' Name="ArrowSubjectTextBlock" FontFamily="Segoe MDL2 Assets" 
+                       Text="&#xE0A6;" Margin="0,140,0,0" />
+                <TextBlock x:ConnectionId='18' Name="SubjectDescription1TextBlock" Text="Firstly, you need to add your subjects" 
+                           Margin="5,0,0,0"
+                           RelativePanel.RightOf="ArrowSubjectTextBlock" 
+                           RelativePanel.AlignBottomWith="ArrowSubjectTextBlock"/>
+                <TextBlock x:ConnectionId='19' Name="SubjectDescription2TextBlock" 
+                           Text="to do it, just click '+' on the lower right corner"
+                           Foreground="Gray" Margin="10,0,0,0"
+                           RelativePanel.Below="SubjectDescription1TextBlock"
+                           RelativePanel.AlignLeftWith="SubjectDescription1TextBlock"/>
+                <CheckBox x:ConnectionId='20' Name="SubjectDoneCheckBox" Content="Done" FontWeight="SemiBold"
+                          RelativePanel.Below="SubjectDescription2TextBlock" 
+                          RelativePanel.AlignHorizontalCenterWith="SubjectDescription2TextBlock"
+                                                                />
+            </RelativePanel>
+            <RelativePanel x:ConnectionId='6' Name="ProfessorPanel"  Visibility="Collapsed">
+                <TextBlock x:ConnectionId='13' Name="ArrowProfessorTextBlock" FontFamily="Segoe MDL2 Assets" 
+                       Text="&#xE0A6;" Margin="0,360,0,0" />
+                <TextBlock x:ConnectionId='14' Name="ProfessorDescription1TextBlock" 
+                           Text="Then, add your professors" 
+                           Margin="5,0,0,0"
+                           RelativePanel.RightOf="ArrowProfessorTextBlock" 
+                           RelativePanel.AlignBottomWith="ArrowProfessorTextBlock"/>
+                <TextBlock x:ConnectionId='15' Name="ProfessorDescription2TextBlock" 
+                           Text="you are almost there :)"
+                           Foreground="Gray" Margin="10,0,0,0"
+                           RelativePanel.Below="ProfessorDescription1TextBlock"
+                           RelativePanel.AlignLeftWith="ProfessorDescription1TextBlock"/>
+                <CheckBox x:ConnectionId='16' Name="ProfessorDoneCheckBox" Content="Done" FontWeight="SemiBold"
+                          RelativePanel.Below="ProfessorDescription2TextBlock" 
+                          RelativePanel.AlignHorizontalCenterWith="ProfessorDescription2TextBlock"
+                                                                  />
+            </RelativePanel>
+            <RelativePanel x:ConnectionId='7' Name="ClassPanel"  Visibility="Collapsed">
+                <TextBlock x:ConnectionId='9' Name="ArrowClassTextBlock" FontFamily="Segoe MDL2 Assets" 
+                       Text="&#xE0A6;" Margin="0,215,0,0" />
+                <TextBlock x:ConnectionId='10' Name="ClassDescription1TextBlock" 
+                           Text="Next step: adding classes" 
+                           Margin="5,0,0,0"
+                           RelativePanel.RightOf="ArrowClassTextBlock" 
+                           RelativePanel.AlignBottomWith="ArrowClassTextBlock"/>
+                <TextBlock x:ConnectionId='11' Name="ClassDescription2TextBlock" 
+                           Text="tip: you can change colors in settings"
+                           Foreground="Gray" Margin="10,0,0,0"
+                           RelativePanel.Below="ClassDescription1TextBlock"
+                           RelativePanel.AlignLeftWith="ClassDescription1TextBlock"/>
+                <CheckBox x:ConnectionId='12' Name="ClassDoneCheckBox" Content="Done" FontWeight="SemiBold"
+                          RelativePanel.Below="ClassDescription2TextBlock" 
+                          RelativePanel.AlignHorizontalCenterWith="ClassDescription2TextBlock"
+                                                              />
+            </RelativePanel>
+            <StackPanel x:ConnectionId='8' Name="LastStepPanel"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.Below="Header2TextBlock" Margin="0,40,0,0">
+                <TextBlock Text="So, the most important steps are done!" 
+                           FontSize="18" Padding="5"
+                           HorizontalAlignment="Center" FontWeight="SemiBold"
+                           Foreground="{ThemeResource SystemAccentColor}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE001;" 
+                               FontWeight="Bold" Padding="4"/>
+                    <TextBlock Text="Tasks and Holidays you can add in the relevant sections" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE001;" 
+                               FontWeight="Bold" Padding="4"/>
+                    <TextBlock Text="If you want to see the help one more time, click the button on the upper left" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE001;" 
+                               FontWeight="Bold" Padding="4"/>
+                    <TextBlock Text="You can see month/week calendar, if you click 'calendar' button in the menu or on the top of the application" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE001;" 
+                               FontWeight="Bold" Padding="4"/>
+                    <TextBlock Text="To select day in 'week' view, click the button on the top" />
+                </StackPanel>
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+</Page>
+

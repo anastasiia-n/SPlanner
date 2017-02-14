@@ -1,0 +1,52 @@
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SQLitePCL.Ext.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.exe.config
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.exe
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SPlanner.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SQLitePCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SPlanner.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.exe
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.pdb
+C:\Users\chelp\Documents\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\sqlite3.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.exe.config
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.exe
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SQLitePCL.Ext.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.exe
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\TestConsole.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SQLitePCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\SPlanner.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\TestConsole\bin\Debug\sqlite3.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\SQLitePCL.Ext.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\sqlite3.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\TestConsole.exe.config
+D:\VS\SPlanner\TestConsole\bin\Debug\TestConsole.exe
+D:\VS\SPlanner\TestConsole\bin\Debug\TestConsole.pdb
+D:\VS\SPlanner\TestConsole\bin\Debug\SPlanner.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\SQLitePCL.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.dll
+D:\VS\SPlanner\TestConsole\bin\Debug\SPlanner.pdb
+D:\VS\SPlanner\TestConsole\bin\Debug\DataAbstractionLayerPCL.pdb
+D:\VS\SPlanner\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+D:\VS\SPlanner\TestConsole\obj\Debug\TestConsole.exe
+D:\VS\SPlanner\TestConsole\obj\Debug\TestConsole.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\SQLitePCL.Ext.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\sqlite3.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\TestConsole.exe.config
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\TestConsole.exe
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\TestConsole.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\SQLitePCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\SPlanner.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\obj\Debug\TestConsole.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\obj\Debug\TestConsole.exe
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\TestConsole\obj\Debug\TestConsole.pdb

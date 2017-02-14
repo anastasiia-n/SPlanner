@@ -1,0 +1,3 @@
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\DataAbstractionLayerPCL\DataAbstractionLayerPCL.csproj;neutral
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\SPlanner_DAL_BL.csproj;neutral
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\SPlanner_UWP.csproj;x86

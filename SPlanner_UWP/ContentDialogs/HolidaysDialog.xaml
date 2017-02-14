@@ -1,0 +1,27 @@
+﻿<ContentDialog
+    x:Class="SPlanner_UWP.HolidaysDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    mc:Ignorable="d"
+    Title="TITLE"
+    PrimaryButtonText="Ok"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Closing="ContentDialog_Closing">
+    <ContentDialog.Resources>
+        <converters:DateTimeToDateTimeOffsetConverter x:Key="dateTimeOffsetConverter"/>
+    </ContentDialog.Resources>
+    <StackPanel Orientation="Vertical">
+        <DatePicker Header="From:" Name="Holidays_from_cdp"
+                    DateChanged="Holidays_from_dp_DateChanged" 
+                    Date="{x:Bind HolidaysVM.Holidays.Start_date, Mode=TwoWay, Converter={StaticResource dateTimeOffsetConverter}}"/>
+        <DatePicker Header="To:" Name="Holidays_to_cdp" HorizontalAlignment="Right" 
+                    DateChanged="Holidays_to_dp_DateChanged"
+                    Date="{x:Bind HolidaysVM.Holidays.End_date, Mode=TwoWay, Converter={StaticResource dateTimeOffsetConverter}}"/>
+        <TextBlock Name="ErrorTextBlock"  Text="" FontStyle="Italic"/>
+    </StackPanel>
+</ContentDialog>

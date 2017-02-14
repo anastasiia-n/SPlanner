@@ -1,0 +1,55 @@
+﻿<ContentDialog x:ConnectionId='1'
+    x:Class="SPlanner_UWP.ClassDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    mc:Ignorable="d"
+    Title="TITLE"
+    PrimaryButtonText="Ok"
+    SecondaryButtonText="Cancel"
+                                                         
+                                                                                             >
+    <ContentDialog.Resources>
+        <converters:DateTimeToDateTimeOffsetConverter x:Key="dateTimeOffsetConverter"/>
+        <converters:NoopConverter x:Key="noopConverter"/>
+        <converters:DatatypeConverters x:Key="intConverter"/>
+    </ContentDialog.Resources>
+    <StackPanel Orientation="Vertical">
+        <ComboBox x:ConnectionId='2' Header="Subject:" Name="Task_subject_cb" MaxWidth="200" MinWidth="100"
+                                                                     
+                                                                                                                          
+                  SelectedValuePath="id" DisplayMemberPath="Name" 
+                                                                                    />
+        <TextBox x:ConnectionId='3' Header="Name:" Name="Class_name_tb"                                                />
+        <TimePicker x:ConnectionId='4' Header="Start time:" Name="Class_start_time_tp" ClockIdentifier="24HourClock" 
+                                                                         />
+        <TimePicker x:ConnectionId='5' Header="End time:" Name="Class_end_time_tp" ClockIdentifier="24HourClock"
+                                                                       />
+        <TextBox x:ConnectionId='6' Header="Location:"  Name="Class_location_tb"                                                    />
+        <ComboBox x:ConnectionId='7' Header="Professor:" Name="Class_professor_cb" MaxWidth="200" MinWidth="100"
+                                                                         
+                                                                                                                            
+                  SelectedValuePath="id" DisplayMemberPath="Name" 
+                                                                                      />
+        <ToggleSwitch x:ConnectionId='8' Name="ScheduleToggleSwitch" Header="Change schedule for the class:" 
+                      OffContent="No" OnContent="Yes"                                        
+                      Visibility="Collapsed"/>
+        <StackPanel x:ConnectionId='9' Orientation="Vertical" Name="Schedule_editing_sp">
+            <ComboBox x:ConnectionId='11' Header="Repeating:" Name="Class_repeating_cb"                                                       >
+                <ComboBoxItem x:ConnectionId='14' Name="No_cbi">No</ComboBoxItem>
+                <ComboBoxItem x:ConnectionId='15' Name="Week_cbi">Week</ComboBoxItem>
+                <ComboBoxItem x:ConnectionId='16' Name="TwoWeeks_cbi">Two weeks</ComboBoxItem>
+                <ComboBoxItem x:ConnectionId='17' Name="Month_cbi">Month</ComboBoxItem>
+            </ComboBox>
+            <CalendarDatePicker x:ConnectionId='12' Header="From:" Name="Class_from_cdp"                                         
+                                                                                                                              />
+            <CalendarDatePicker x:ConnectionId='13' Header="To:" Name="Class_to_cdp"                                       
+                                                                                                                            />
+        </StackPanel>
+        <TextBlock x:ConnectionId='10' Name="ErrorTextBlock"  Text="" FontStyle="Italic"/>
+    </StackPanel>
+</ContentDialog>
+

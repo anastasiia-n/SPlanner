@@ -1,0 +1,2 @@
+MainPackage=C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\ARM\Debug\SPlanner_UWP_1.0.0.0_ARM_Debug.appx
+SymbolPackage=C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\AppPackages\SPlanner_UWP_1.0.0.0_Debug_Test\SPlanner_UWP_1.0.0.0_ARM_Debug.appxsym

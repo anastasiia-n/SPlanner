@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="SPlanner_UWP.SummaryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:DateHeaderConverter x:Key="dateConverter"/>
+        <Style x:Key="ItemsTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundAccentBrush}"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                <Button Content="&#xE00E;" Style="{StaticResource ButtonStyleIcon}" Click="PrevButton_Click"/>
+                <TextBlock Text="{x:Bind SummaryVM.Date, Mode=OneWay, Converter={StaticResource dateConverter}}" VerticalAlignment="Center"
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}" FontWeight="Medium"/>
+                <Button Content="&#xE00F;" Style="{StaticResource ButtonStyleIcon}" Click="NextButton_Click"/>
+            </StackPanel>
+            
+            <TextBlock Text="&#xE133;" Grid.Row="1" Style="{StaticResource ItemsTextBlockStyle}"/>
+            <TextBlock Text="Tasks:" Grid.Row="1" Grid.Column="1" Padding="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
+            <TextBlock Text="{x:Bind SummaryVM.countCollection[0],Mode=OneWay}" Grid.Row="1" Grid.Column="2" Padding="5" VerticalAlignment="Center"/>
+            
+            <TextBlock Text="&#xE163;" Grid.Row="2" Style="{StaticResource ItemsTextBlockStyle}"/>
+            <TextBlock Text="Classes:" Grid.Row="2" Grid.Column="1" Padding="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
+            <TextBlock Text="{x:Bind SummaryVM.countCollection[1],Mode=OneWay}" Grid.Row="2" Grid.Column="2" Padding="5" VerticalAlignment="Center"/>
+            
+            <TextBlock Text="&#xE7BE;" Grid.Row="3" Style="{StaticResource ItemsTextBlockStyle}"/>
+            <TextBlock Text="Busy days:" Grid.Row="3" Grid.Column="1" Padding="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
+            <TextBlock Text="{x:Bind SummaryVM.countCollection[2],Mode=OneWay}" Grid.Row="3" Grid.Column="2" Padding="5" VerticalAlignment="Center"/>
+            
+            <TextBlock Text="&#xE1C3;" Grid.Row="4" Style="{StaticResource ItemsTextBlockStyle}"/>
+            <TextBlock Text="Free days:" Grid.Row="4" Grid.Column="1" Padding="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
+            <TextBlock Text="{x:Bind SummaryVM.countCollection[3],Mode=OneWay}" Grid.Row="4" Grid.Column="2" Padding="5" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>

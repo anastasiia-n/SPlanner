@@ -1,0 +1,35 @@
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner_DAL_BL.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.pdb
+D:\VS\SPlanner\SPlanner\bin\Debug\SPlanner.dll
+D:\VS\SPlanner\SPlanner\bin\Debug\SPlanner.pdb
+D:\VS\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll
+D:\VS\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.pdb
+D:\VS\SPlanner\SPlanner\obj\Debug\SPlanner_DAL_BL.csprojResolveAssemblyReference.cache
+D:\VS\SPlanner\SPlanner\obj\Debug\SPlanner.dll
+D:\VS\SPlanner\SPlanner\obj\Debug\SPlanner.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\bin\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\bin\Debug\SPlanner.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\obj\Debug\SPlanner_DAL_BL.csprojResolveAssemblyReference.cache
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\obj\Debug\SPlanner.dll
+C:\Users\chelp\Desktop\IPB\Visual Studio 2015\Projects\SPlannerv2\SPlanner\obj\Debug\SPlanner.pdb
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.dll
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.pdb
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.pdb
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner_DAL_BL.csprojResolveAssemblyReference.cache
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.dll
+D:\IPB\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.pdb
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.dll
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.pdb
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.pdb
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner_DAL_BL.csprojResolveAssemblyReference.cache
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.dll
+C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\obj\Debug\SPlanner.pdb

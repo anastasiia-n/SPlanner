@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="SPlanner_UWP.SettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SPlanner_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:SPlanner_UWP.Converters"
+    xmlns:bl="using:SPlanner.BL"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <converters:NoopConverter x:Key="noopConverter"/>
+        <converters:RuntimePropertyInfoToColorConverter x:Key="propertyToColorConverter"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="10">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Tapped="StackPanel_Tapped">
+                <TextBlock Text="&#xE2B1;" FontFamily="Segoe MDL2 Assets" FontSize="30" 
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}" Padding="10"/>
+                <TextBlock Text="Change color for a class" VerticalAlignment="Center" Padding="10"/>
+            </StackPanel>
+            <StackPanel Name="ClassColorStackPanel" Orientation="Horizontal" Padding="10" Visibility="Collapsed">
+                <ComboBox ItemsSource="{x:Bind ClassVM.ClassCollection}"  Width="120"
+                    SelectedItem="{x:Bind ClassVM.Class, Mode=TwoWay, Converter={StaticResource noopConverter}}" 
+                    PlaceholderText="Select class">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate  x:DataType="bl:Class">
+                            <StackPanel Orientation="Horizontal" MinWidth="250">
+                                <TextBlock Text="{x:Bind Name}" />
+                                <TextBlock Text=" ("/>
+                                <TextBlock Text="{x:Bind subject.Name}" />
+                                <TextBlock Text=")"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox Name="ColorsComboBox" Width="120" Margin="10,0" 
+                          SelectedItem="{x:Bind color, Mode=TwoWay, Converter={StaticResource propertyToColorConverter}}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Width="150">
+                                <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                                <TextBlock Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Content="Add" Click="AddColor_Click"/>
+                <Button Content="Clear" Margin="10,0" Click="Clear_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
