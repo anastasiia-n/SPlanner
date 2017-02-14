@@ -8,9 +8,9 @@ UWP application, student planner
   - **SPlanner** (SPlanner_DAL_BL) - Data access layer + Business layer
   - **TestConsole** - testing DAL and BL
   - **SPlanner_UWP** - Universal Windows application
-  -- **View** - .xaml (and .xaml.cs) files ("View" layer)
- -- **ContentDialogs** - "View" layer 
- -- **ViewModel** - "View-Model" layer
- -- **Converters**
+    - **View** - .xaml (and .xaml.cs) files ("View" layer)
+    - **ContentDialogs** - "View" layer 
+    - **ViewModel** - "View-Model" layer
+    - **Converters**
 
 I used SQLite for database access. 
