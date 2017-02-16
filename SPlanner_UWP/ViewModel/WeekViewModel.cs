@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace SPlanner_UWP.ViewModel
@@ -23,6 +24,7 @@ namespace SPlanner_UWP.ViewModel
                     foreach (var day in day_Week_InfoCollection)
                     {
                         day.timeLimit = this.timeLimit;
+                        int diff = 0;
                         foreach (var item in day.Classes)
                         {
                             item.duration = (item.End_time.Hours - item.Start_time.Hours) * 60
@@ -30,6 +32,9 @@ namespace SPlanner_UWP.ViewModel
                             item.subject = Subject.SelectById(item.Subject_id);
                             if (item.Professor_id != null)
                                 item.professor = Professor.SelectById((long)item.Professor_id);
+
+                            item.diff = (item.Start_time.Hours - 6) * 60 + item.Start_time.Minutes - diff;
+                            diff = (item.End_time.Hours - 6) * 60 + item.End_time.Minutes;
                         }
                     }
                     NotifyPropertyChanged();

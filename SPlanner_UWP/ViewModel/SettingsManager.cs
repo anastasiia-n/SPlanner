@@ -34,6 +34,15 @@ namespace SPlanner_UWP
             string key = classId + "ClassColor";
             localSettings.Values.Remove(key);
         }
+        internal static void SetStandartClassDuration(uint durationInMinutes)
+        {
+            localSettings.Values["duration"] = durationInMinutes.ToString();
+        }
+        internal static int GetStandartClassDuration()
+        {
+            if (localSettings.Values["duration"] == null) return 0;
+            return Convert.ToInt32(localSettings.Values["duration"]);
+        }
         internal static SolidColorBrush GetColor(long classId)
         {
             SolidColorBrush brush = null;

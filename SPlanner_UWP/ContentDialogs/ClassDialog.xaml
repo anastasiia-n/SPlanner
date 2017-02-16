@@ -24,7 +24,7 @@
                   SelectedValuePath="id" DisplayMemberPath="Name" 
                   PlaceholderText="{x:Bind ClassVM.Class.subject.Name, Mode=OneWay}"/>
         <TextBox Header="Name:" Name="Class_name_tb" Text="{x:Bind ClassVM.Class.Name, Mode=TwoWay}"/>
-        <TimePicker Header="Start time:" Name="Class_start_time_tp" ClockIdentifier="24HourClock" 
+        <TimePicker Header="Start time:" Name="Class_start_time_tp" ClockIdentifier="24HourClock" TimeChanged="Class_start_time_tp_TimeChanged"
                     Time="{x:Bind ClassVM.Class.Start_time, Mode=TwoWay}"/>
         <TimePicker Header="End time:" Name="Class_end_time_tp" ClockIdentifier="24HourClock"
                     Time="{x:Bind ClassVM.Class.End_time, Mode=TwoWay}"/>

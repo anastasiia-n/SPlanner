@@ -1,6 +1,7 @@
 ﻿using SPlanner.BL;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using static SPlanner.BL.Class;
 
 namespace SPlanner_UWP.ViewModel
@@ -36,6 +37,12 @@ namespace SPlanner_UWP.ViewModel
         public ClassViewModel(DateTime date)
         {
             ClassCollection = Class.SelectByDate(date);
+            var list = ClassCollection.OrderBy(c => c.Start_time).ToList();
+            ClassCollection.Clear();
+            foreach (Class clas in list)
+            {
+                ClassCollection.Add(clas);
+            }
         }
 
         private Repeating stringToRepeating(string str)

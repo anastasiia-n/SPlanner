@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace SPlanner_UWP.ViewModel
 {
@@ -26,6 +27,7 @@ namespace SPlanner_UWP.ViewModel
                     Classes = Class.SelectByDate(mydate),
                     Tasks = Task.SelectByDate(mydate)
                 };
+                SortClasses(di.Classes);
                 diCollection.Add(di);
                 mydate = mydate.AddDays(1);
             }
@@ -36,8 +38,18 @@ namespace SPlanner_UWP.ViewModel
             Day_Info di = new Day_Info();
             di.date = selected_date;
             di.Classes = Class.SelectByDate(selected_date);
+            SortClasses(di.Classes);
             di.Tasks = Task.SelectByDate(selected_date);
             return di;
+        }
+        private static void SortClasses(ObservableCollection<Class> collection)
+        {
+            var list = collection.OrderBy(c => c.Start_time).ToList();
+            collection.Clear();
+            foreach (Class clas in list)
+            {
+                collection.Add(clas);
+            }
         }
     }
 }

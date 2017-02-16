@@ -34,6 +34,7 @@ namespace SPlanner_UWP
             ClassVM = new ClassViewModel();
             color = new Color();
             ColorsComboBox.ItemsSource = typeof(Colors).GetProperties();
+            Duration_TextBox.Text = SettingsManager.GetStandartClassDuration().ToString();
         }
 
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
@@ -57,6 +58,45 @@ namespace SPlanner_UWP
             {
                 SettingsManager.RemoveColor(ClassVM.Class.id);
             }
+        }
+
+        private void StackPanelDuration_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ClassDurationStackPanel.Visibility =
+                ClassDurationStackPanel.Visibility == Visibility.Visible ?
+                Visibility.Collapsed : Visibility.Visible;
+        }
+
+        private void Duration_TextBox_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            if (sender.Text == "")
+            {
+                sender.Text = "0";
+                sender.SelectionStart = 1;
+                return;
+            }
+            uint durationValue;
+            if (uint.TryParse(sender.Text, out durationValue)) //if value is a number
+            {
+                if (durationValue <= 12 * 60) //if value equal or less than 12 hours
+                {
+                    if (sender.Text.Substring(0, 1) == "0") //if  value starts from zero, remove it ("01" -> "1")
+                    {
+                        sender.Text = sender.Text.Substring(1, sender.Text.Length - 1);
+                        sender.SelectionStart = sender.SelectionStart + 1;
+                    }
+                    return;
+                }
+            }
+            // if tryParse failed:
+            int pos = sender.SelectionStart - 1;
+            sender.Text = sender.Text.Remove(pos, 1); //remove last added character
+            sender.SelectionStart = pos;
+        }
+
+        private void SetDurationButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsManager.SetStandartClassDuration(Convert.ToUInt32(Duration_TextBox.Text));
         }
     }
 }

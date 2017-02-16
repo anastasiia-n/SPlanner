@@ -24,7 +24,7 @@
                   SelectedValuePath="id" DisplayMemberPath="Name" 
                                                                                     />
         <TextBox x:ConnectionId='3' Header="Name:" Name="Class_name_tb"                                                />
-        <TimePicker x:ConnectionId='4' Header="Start time:" Name="Class_start_time_tp" ClockIdentifier="24HourClock" 
+        <TimePicker x:ConnectionId='4' Header="Start time:" Name="Class_start_time_tp" ClockIdentifier="24HourClock"                                              
                                                                          />
         <TimePicker x:ConnectionId='5' Header="End time:" Name="Class_end_time_tp" ClockIdentifier="24HourClock"
                                                                        />

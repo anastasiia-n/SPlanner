@@ -49,6 +49,15 @@
                 <Button Content="Add" Click="AddColor_Click"/>
                 <Button Content="Clear" Margin="10,0" Click="Clear_Click"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Tapped="StackPanelDuration_Tapped">
+                <TextBlock Text="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" 
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}" Padding="10"/>
+                <TextBlock Text="Standart class duration (minutes)" VerticalAlignment="Center" Padding="10"/>
+            </StackPanel>
+            <StackPanel Name="ClassDurationStackPanel" Orientation="Horizontal" Padding="10" Visibility="Collapsed">
+                <TextBox Name="Duration_TextBox"  Text="" TextChanging="Duration_TextBox_TextChanging"/>
+                <Button Content="Ok" Click="SetDurationButton_Click" Margin="10,0"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

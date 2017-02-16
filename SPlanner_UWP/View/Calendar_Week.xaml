@@ -78,12 +78,6 @@
                             </Border>
                         </DataTemplate>
                     </GridView.ItemTemplate>
-                    <GridView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapGrid MaximumRowsOrColumns="7" Orientation="Horizontal" HorizontalAlignment="Stretch"
-                              HorizontalChildrenAlignment="Stretch" VerticalChildrenAlignment="Top" VerticalAlignment="Top"/>
-                        </ItemsPanelTemplate>
-                    </GridView.ItemsPanel>
                 </GridView>
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Auto" Grid.Row="1">
@@ -96,7 +90,7 @@
                                       Grid.Column="1" Margin="0,-30,0,0">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate x:DataType="vm:Day_Info">
-                                    <Grid Width="150" VerticalAlignment="Top" >
+                                    <Grid Width="150" VerticalAlignment="Top" Margin="2,0">
                                         <ItemsControl ItemsSource="{x:Bind timeLimit}" Grid.Row="1" >
                                             <ItemsControl.ItemsPanel>
                                                 <ItemsPanelTemplate>
@@ -112,17 +106,18 @@
                                         </ItemsControl>
                                         <GridView ItemsSource="{x:Bind Classes}" Grid.Row="1" 
                                                   ItemContainerStyle="{StaticResource GridViewItemStyle1}"
-                                                  SelectionMode="Single" >
+                                                  SelectionMode="Single" VerticalContentAlignment="Top">
                                             <GridView.ItemsPanel>
                                                 <ItemsPanelTemplate>
-                                                    <StackPanel Orientation="Vertical" />
+                                                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" />
                                                 </ItemsPanelTemplate>
                                             </GridView.ItemsPanel>
                                             <GridView.ItemTemplate>
                                                 <DataTemplate x:DataType="bl:Class">
                                                     <Border Background="{x:Bind id, Converter={StaticResource classToColorConverter}}" 
                                                             Height="{x:Bind duration, Converter={StaticResource heightConverter}}"
-                                                            Margin="{Binding Mode=OneWay, Converter={StaticResource positionConverter}}" Padding="5">
+                                                            Margin="{Binding Mode=OneWay, Converter={StaticResource positionConverter}}" 
+                                                            Padding="5" Width="150">
                                                         <StackPanel Orientation="Vertical" >
                                                             <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold"/>
                                                             <StackPanel Orientation="Horizontal" >

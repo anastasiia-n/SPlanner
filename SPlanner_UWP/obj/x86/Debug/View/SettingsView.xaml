@@ -21,21 +21,21 @@
                 <TextBlock Text="Change color for a class" VerticalAlignment="Center" Padding="10"/>
             </StackPanel>
             <StackPanel x:ConnectionId='3' Name="ClassColorStackPanel" Orientation="Horizontal" Padding="10" Visibility="Collapsed">
-                <ComboBox x:ConnectionId='4'                                                 Width="120"
+                <ComboBox x:ConnectionId='8'                                                 Width="120"
                                                                                                                  
                     PlaceholderText="Select class">
                     <ComboBox.ItemTemplate>
                         <DataTemplate                       >
-                            <StackPanel x:ConnectionId='8' Orientation="Horizontal" MinWidth="250">
-                                <TextBlock x:ConnectionId='9'                      />
+                            <StackPanel x:ConnectionId='12' Orientation="Horizontal" MinWidth="250">
+                                <TextBlock x:ConnectionId='13'                      />
                                 <TextBlock Text=" ("/>
-                                <TextBlock x:ConnectionId='10'                              />
+                                <TextBlock x:ConnectionId='14'                              />
                                 <TextBlock Text=")"/>
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ComboBox x:ConnectionId='5' Name="ColorsComboBox" Width="120" Margin="10,0" 
+                <ComboBox x:ConnectionId='9' Name="ColorsComboBox" Width="120" Margin="10,0" 
                                                                                                                          >
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -46,8 +46,17 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <Button x:ConnectionId='6' Content="Add"                       />
-                <Button x:ConnectionId='7' Content="Clear" Margin="10,0"                    />
+                <Button x:ConnectionId='10' Content="Add"                       />
+                <Button x:ConnectionId='11' Content="Clear" Margin="10,0"                    />
+            </StackPanel>
+            <StackPanel x:ConnectionId='4' Orientation="Horizontal"                                   >
+                <TextBlock Text="&#xE121;" FontFamily="Segoe MDL2 Assets" FontSize="30" 
+                           Foreground="{ThemeResource SystemControlForegroundAccentBrush}" Padding="10"/>
+                <TextBlock Text="Standart class duration (minutes)" VerticalAlignment="Center" Padding="10"/>
+            </StackPanel>
+            <StackPanel x:ConnectionId='5' Name="ClassDurationStackPanel" Orientation="Horizontal" Padding="10" Visibility="Collapsed">
+                <TextBox x:ConnectionId='6' Name="Duration_TextBox"  Text=""                                             />
+                <Button x:ConnectionId='7' Content="Ok"                                 Margin="10,0"/>
             </StackPanel>
         </StackPanel>
     </Grid>

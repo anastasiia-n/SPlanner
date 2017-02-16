@@ -43,10 +43,19 @@ namespace SPlanner_UWP
                 editingMode = false;
                 ScheduleToggleSwitch.Visibility = Visibility.Collapsed;
             }
+
+            ClassVM.Class.Start_time = new TimeSpan(7, 0, 0);
+            ClassVM.Class.End_time = ClassVM.Class.Start_time.Add(new TimeSpan(0, SettingsManager.GetStandartClassDuration(), 0));
         }
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
+            if (ClassVM.Class.Start_time.Hours < 7 || ClassVM.Class.End_time.Hours > 22) 
+            {
+                ErrorTextBlock.Text = "Class should start after 7:00 / end before 22:00, sorry";
+                PreventClosing = true;
+                return;
+            }
             if (ClassVM.Class.Start_time.TotalMinutes + 10 > ClassVM.Class.End_time.TotalMinutes)
             {
                 ErrorTextBlock.Text = "Difference between start and end time must be at least 10 minutes";
@@ -146,9 +155,14 @@ namespace SPlanner_UWP
         private void Class_repeating_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Class_repeating_cb.SelectedItem == No_cbi)
-                Class_from_cdp.Visibility = Visibility.Collapsed;
+                Class_to_cdp.Visibility = Visibility.Collapsed;
             else
-                Class_from_cdp.Visibility = Visibility.Visible;
+                Class_to_cdp.Visibility = Visibility.Visible;
+        }
+
+        private void Class_start_time_tp_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
+        {
+            Class_end_time_tp.Time = Class_start_time_tp.Time.Add(new TimeSpan(0, SettingsManager.GetStandartClassDuration(), 0));
         }
     }
 }

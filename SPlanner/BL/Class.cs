@@ -19,6 +19,7 @@ namespace SPlanner.BL
         public Subject subject { get; set; }
         public Professor professor { get; set; }
         public int duration { get; set; }
+        public int diff { get; set; }
 
         public static void CreateTable()
         {
@@ -28,7 +29,11 @@ namespace SPlanner.BL
         public bool Create(DateTime from_date, DateTime to_date, Repeating rep)
         {
             if (ClassDAL.Create(this))
+            {
+                var collection = Class.SelectAll();
+                this.id = collection[collection.Count - 1].id;
                 return CreateSchedule(from_date, to_date, rep);
+            }
             else
                 return false;
         }
@@ -53,58 +58,7 @@ namespace SPlanner.BL
                 if (difference.Days <= 365) //to don't add too many rows in DB
                 {
                     var date = from_date;
-                    Schedule sched = new Schedule();
-                    var all = SelectAll();
-                    sched.Class_id = all[all.Count - 1].id; //get id of the last created class
-                    switch (rep)
-                    {
-                        case Repeating.Week:
-                            while (date <= to_date)
-                            {
-                                sched.Date = date;
-                                sched.Create();
-                                date = date.AddDays(7);
-                            }
-                            break;
-                        case Repeating.TwoWeeks:
-                            while (date <= to_date)
-                            {
-                                sched.Date = date;
-                                sched.Create();
-                                date = date.AddDays(14);
-                            }
-                            break;
-                        case Repeating.Month:
-                            while (date <= to_date)
-                            {
-                                sched.Date = date;
-                                sched.Create();
-                                date = date.AddMonths(1);
-                            }
-                            break;
-                    }
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public bool UpdateSchedule(DateTime from_date, DateTime to_date, Repeating rep)
-        {
-            if (to_date >= from_date)
-            {
-                TimeSpan difference = to_date - from_date;
-                if (difference.Days <= 365) //to don't add too many rows in DB
-                {
-                    var date = from_date;
-                    Schedule.DeleteByClassId(this.id);
+                    //Schedule.DeleteByClassId(this.id);
                     Schedule sched = new Schedule();
                     sched.Class_id = this.id;
 
@@ -152,6 +106,20 @@ namespace SPlanner.BL
             {
                 return false;
             }
+        }
+
+        public bool UpdateSchedule(DateTime from_date, DateTime to_date, Repeating rep)
+        {
+            if (to_date >= from_date)
+            {
+                TimeSpan difference = to_date - from_date;
+                if (difference.Days <= 365) //to don't add too many rows in DB
+                {
+                    Schedule.DeleteByClassId(this.id);
+                    return CreateSchedule(from_date, to_date, rep);
+                }
+            }
+            return false;
         }
 
         public static Class SelectById(long id)

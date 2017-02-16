@@ -10,19 +10,19 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>81c74d9f-63e6-42b7-9d2f-c95058bfbf5d</PackageIdentityName>
     <PackageIdentityPublisher>CN=chelp</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\anast\SPlanner\SPlanner_UWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\anast\SPlanner\SPlanner_UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\x86\Debug\SPlanner_UWP.exe">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\bin\x86\Debug\SPlanner_UWP.exe">
       <PackagePath>entrypoint\SPlanner_UWP.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anast\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
@@ -337,49 +337,49 @@
     <AppxPackagedFile Include="C:\Users\anast\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\SPlanner.dll">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner\bin\Debug\SPlanner.dll">
       <PackagePath>SPlanner.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner\bin\Debug\DataAbstractionLayerPCL.dll">
       <PackagePath>DataAbstractionLayerPCL.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\anast\.nuget\packages\SQLitePCL\3.8.7.2\build\netcore451\SQLitePCL.Ext.dll">
       <PackagePath>SQLitePCL.Ext.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\x86\Debug\SPlanner_UWP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\bin\x86\Debug\SPlanner_UWP.xr.xml">
       <PackagePath>SPlanner_UWP.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0\\redist\Debug\x86\ucrtbased.dll">
@@ -388,11 +388,11 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\anast\Documents\MEGAsync\Visual Studio 2015\Projects\SPlanner\SPlanner_UWP\bin\x86\Debug\Core\SPlanner_UWP.exe">
+    <AppxPackagedFile Include="C:\Users\anast\SPlanner\SPlanner_UWP\bin\x86\Debug\Core\SPlanner_UWP.exe">
       <PackagePath>SPlanner_UWP.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

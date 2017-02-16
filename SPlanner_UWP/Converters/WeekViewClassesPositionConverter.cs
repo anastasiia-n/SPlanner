@@ -11,9 +11,10 @@ namespace SPlanner_UWP.Converters
         {
             var mytime = ((Class)value).Start_time;
             int duration = ((Class)value).duration;
+            int diff = ((Class)value).diff;
             if (mytime == null) return new Thickness();
             int margintop = (mytime.Hours - 6) * 60 + mytime.Minutes;
-            return new Thickness(0, margintop, 0, -(margintop+duration));
+            return new Thickness(0, diff, 0, -5);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
